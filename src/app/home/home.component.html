@@ -5,8 +5,7 @@
       <div class="flex space-x-7">
         <div>
           <!-- Website Logo -->
-          <a class="flex items-center py-4 px-2" href="#">
-            <!--            <img alt="Logo" class="h-8 w-8 mr-2" src="logo.png">-->
+          <a class="flex items-center py-4 px-2">
             <span class="font-semibold text-gray-500 text-lg">Navigation</span>
           </a>
         </div>
@@ -14,9 +13,9 @@
         <div class="hidden md:flex items-center space-x-1">
           <a class="py-4 px-2 text-green-500 border-b-4 border-green-500 font-semibold " href="">Home</a>
           <a class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300"
-             href="">Services</a>
+             routerLink="/guessWho">Guess Who</a>
           <a class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300"
-             href="">About</a>
+             routerLink="/video">About</a>
           <a class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300" href="">Contact
             Us</a>
         </div>
@@ -62,14 +61,18 @@
 <section>
   <div class="header5-content">
     <owl-carousel-o [options]="sliderOptions">
-      <ng-template carouselSlide>
+      <ng-template carouselSlide *ngFor="let items of messages">
         <div class="slide">
-          <img src="https://platform3-portalv3-production.s3.us-west-2.amazonaws.com/uniallaccess/bannerimages/house-of-gucci_earn_points_banner_1920x600_v2a.jpg" alt="img 1">
-        </div>
-      </ng-template>
-      <ng-template carouselSlide>
-        <div class="slide">
-          <img src="https://platform3-portalv3-production.s3.us-west-2.amazonaws.com/uniallaccess/bannerimages/355_earn_points_banner_1920x600.jpg" alt="img 2">
+          <div class="h-screen w-screen" [ngClass]="items.useClass">
+            <div class="grid grid-rows-3 grid-flow-col gap-4">
+              <div class="row-span-3">
+                <p style="font-size: 100px">{{items.person}}</p>
+              </div>
+              <div class="row-span-3 col-span-2">
+                <img src="assets/images/58105055-removebg-preview.png" alt="sjsbnj">
+              </div>
+            </div>
+          </div>
         </div>
       </ng-template>
     </owl-carousel-o>

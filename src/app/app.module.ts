@@ -7,11 +7,13 @@ import { HomeComponent } from './home/home.component';
 import {CarouselModule} from "ngx-owl-carousel-o";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {NgxHowlerService} from "ngx-howler";
+import { GuessWhoComponent } from './guess-who/guess-who.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
+    GuessWhoComponent,
   ],
   imports: [
     BrowserModule,
