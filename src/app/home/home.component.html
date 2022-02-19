@@ -1,0 +1,78 @@
+<!-- Navbar goes here -->
+<nav class="bg-white shadow-lg">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="flex justify-between">
+      <div class="flex space-x-7">
+        <div>
+          <!-- Website Logo -->
+          <a class="flex items-center py-4 px-2" href="#">
+            <!--            <img alt="Logo" class="h-8 w-8 mr-2" src="logo.png">-->
+            <span class="font-semibold text-gray-500 text-lg">Navigation</span>
+          </a>
+        </div>
+        <!-- Primary Navbar items -->
+        <div class="hidden md:flex items-center space-x-1">
+          <a class="py-4 px-2 text-green-500 border-b-4 border-green-500 font-semibold " href="">Home</a>
+          <a class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300"
+             href="">Services</a>
+          <a class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300"
+             href="">About</a>
+          <a class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300" href="">Contact
+            Us</a>
+        </div>
+      </div>
+            <!-- Secondary Navbar items -->
+            <div class="hidden md:flex items-center space-x-3 ">
+              <a class="py-2 px-2 font-medium text-gray-500 rounded hover:bg-green-500 hover:text-white transition duration-300"
+                 href="">LOGO</a>
+            </div>
+<!--       Mobile menu button -->
+      <div class="md:hidden flex items-center">
+        <button class="outline-none mobile-menu-button">
+          <svg class=" w-6 h-6 text-gray-500 hover:text-green-500 "
+               fill="none"
+               stroke="currentColor"
+               stroke-linecap="round"
+               stroke-linejoin="round"
+               stroke-width="2"
+               viewBox="0 0 24 24"
+               x-show="!showMenu"
+          >
+            <path d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+  <!-- mobile menu -->
+  <div class="hidden mobile-menu">
+    <ul class="">
+      <li class="active"><a class="block text-sm px-2 py-4 text-white bg-green-500 font-semibold"
+                            href="index.html">Home</a></li>
+      <li><a class="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300" href="#services">Services</a>
+      </li>
+      <li><a class="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300" href="#about">About</a></li>
+      <li><a class="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300" href="#contact">Contact Us</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+<section>
+  <div class="header5-content">
+    <owl-carousel-o [options]="sliderOptions">
+      <ng-template carouselSlide>
+        <div class="slide">
+          <img src="https://platform3-portalv3-production.s3.us-west-2.amazonaws.com/uniallaccess/bannerimages/house-of-gucci_earn_points_banner_1920x600_v2a.jpg" alt="img 1">
+        </div>
+      </ng-template>
+      <ng-template carouselSlide>
+        <div class="slide">
+          <img src="https://platform3-portalv3-production.s3.us-west-2.amazonaws.com/uniallaccess/bannerimages/355_earn_points_banner_1920x600.jpg" alt="img 2">
+        </div>
+      </ng-template>
+    </owl-carousel-o>
+  </div>
+
+</section>
