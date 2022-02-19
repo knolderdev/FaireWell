@@ -28,7 +28,7 @@ export class AppComponent implements OnInit{
   start(){
     this.router.navigate(['/home']);
     this.hideButton = false;
-    // this.play();
+    this.play();
   }
 
   play() {
