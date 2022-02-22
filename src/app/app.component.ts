@@ -1,8 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {NgxHowlerService} from "ngx-howler";
 import {Router} from "@angular/router";
-// import {Howl, Howler} from 'howler';
-// import {Howl, Howe}
 
 @Component({
   selector: 'app-root',

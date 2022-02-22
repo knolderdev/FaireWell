@@ -7,7 +7,8 @@ import {AppConstants} from "../app-constants";
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  messages = AppConstants.messages
+  menu = AppConstants.menuLinks;
+  messages = AppConstants.banners
   sliderOptions = {
     items: 1,
     margin: 0,

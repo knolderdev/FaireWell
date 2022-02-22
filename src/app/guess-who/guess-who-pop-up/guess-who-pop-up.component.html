@@ -1,0 +1,47 @@
+<div class="grid place-items-center" style="width: 400px">
+  <div class="text-center">
+
+    <ng-container *ngIf="showResult else showForm">
+      <div class="flex flex-col pt-6">
+        <div class="mb-2 w-full">
+          <ng-container *ngIf="won">
+            <mat-icon class="sad-icon text-7xl text-green-400">sentiment_satisfied_alt</mat-icon>
+            <p>Woooohooo!!!!!! You Won</p>
+          </ng-container>
+          <ng-container *ngIf="loose">
+            <mat-icon class="sad-icon text-7xl text-red-400">sentiment_very_dissatisfied</mat-icon>
+            <p>Sorry!! You loose</p>
+          </ng-container>
+        </div>
+        <div class="sm:flex">
+          <div class="text-center mb-2 w-full">
+            <button  type="button"
+                     (click)="closeDialog()"
+                     class="text-white bg-gray-800 hover:bg-gray-900 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mt-6 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-800 dark:border-gray-700">Reveal</button>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+    <ng-template #showForm>
+      <form (ngSubmit)="onSubmit()" [formGroup]="guessWhoForm"
+             class="flex flex-col pt-6">
+        <mat-form-field appearance="outline" class="mb-2 w-full">
+          <mat-label class="input-text">Guess Who ?</mat-label>
+          <mat-select formControlName="names">
+            <mat-option *ngFor="let options of dropDownOptions" [value]="options" >
+              {{options}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <!--Submit Button-->
+        <div class="sm:flex">
+          <div class="text-center mb-2 w-full">
+            <button  type="submit" class="text-white bg-gray-800 hover:bg-gray-900 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mt-6 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-800 dark:border-gray-700">Submit</button>
+          </div>
+        </div>
+      </form>
+    </ng-template>
+
+  </div>
+</div>
+
