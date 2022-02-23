@@ -23,7 +23,8 @@ module.exports = {
         'SF-ProLight': ['SF-ProLight'],
         'SF-ProMedium': ['SF-ProMedium'],
         'SF-ProRegular': ['SF-ProRegular'],
-        'SF-ProRegularItalic': ['SF-ProRegularItalic']
+        'SF-ProRegularItalic': ['SF-ProRegularItalic'],
+        'Rampart': ['Waterfall', 'cursive'],
       },
       colors: {
         'primary-color': '#231f20',

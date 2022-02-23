@@ -20,6 +20,7 @@ import {MatSelectModule} from "@angular/material/select";
 import {MatOptionModule} from "@angular/material/core";
 import {MatIconModule} from "@angular/material/icon";
 import { HeaderComponent } from './header/header.component';
+import { MemoriesComponent } from './memories/memories.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { HeaderComponent } from './header/header.component';
     MessageComponent,
     GuessWhoPopUpComponent,
     HeaderComponent,
+    MemoriesComponent,
   ],
     imports: [
         BrowserModule,

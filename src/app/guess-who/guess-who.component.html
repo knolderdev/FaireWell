@@ -3,19 +3,21 @@
   <div class="header5-content h-screen mt-10" style="height: 600px">
     <owl-carousel-o [options]="sliderOptions">
       <ng-template *ngFor="let items of messages" carouselSlide>
-        <div class="slide">
-          <div [ngClass]="items.useClass" class="w-screen">
+        <div class="slide" [style.background-image]="'url('+items.imageLink+')'" style="background-repeat: no-repeat; background-size: cover">
+          <div class="w-screen">
             <div class="container mx-auto">
               <div class="grid grid-cols-2 gap-6">
-                <div class="grid place-items-center text-6xl">
+                <div class="grid place-items-center"
+                     style="font-family: 'Waterfall', cursive;"
+                     [ngClass]="items.textClass">
                   {{items.message}}
                 </div>
                 <div class="grid place-items-center">
                   <ng-container *ngIf="items.reveal else showQuestionMark">
                     <img
                       alt="anjn"
-                      style="margin-top: 130px"
-                      src="https://imageio.forbes.com/specials-images/imageserve/61688aa1d4a8658c3f4d8640/Antonio-Juliano/0x0.jpg?fit=bounds&format=jpg&width=960">
+                      style="margin-top: 130px;height: 550px; width: 550px"
+                      src="{{items.personImage}}">
                   </ng-container>
                   <ng-template #showQuestionMark>
                     <img (click)="open(items.person)" alt="sjsbnj" src="assets/images/58105055-removebg-preview.png" style="height: 550px; width: 550px">
