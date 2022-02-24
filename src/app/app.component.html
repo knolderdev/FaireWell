@@ -1,8 +1,15 @@
 <ng-container *ngIf="hideButton else showRouter">
-  <div class="grid place-items-center h-screen">
-    <button (click)="start()" class="rounded-full bg-indigo-500 px-4 py-2 text-white animate__animated animate__bounce animate__infinite">
+  <div class="grid place-items-center h-screen" style="background-image: url('https://i.postimg.cc/4yPbhvRV/BGfINAL.png'); background-repeat: no-repeat; background-size: cover">
+    <button (click)="start()"
+            style="z-index: 1000;"
+            class="rounded-full bg-indigo-500 px-4 py-2 text-white animate__animated animate__bounce animate__infinite">
       Don't Say Goodbye
     </button>
+<!--    <marquee behavior="scroll" direction="right" class="absolute top-70">-->
+<!--      <span style="font-size: 30px; font-weight: bold">-->
+<!--        We will miss you-->
+<!--      </span>-->
+<!--    </marquee>-->
   </div>
 </ng-container>
 <ng-template #showRouter class="overflow-hidden">
