@@ -129,7 +129,7 @@ export class GuessWhoComponent implements OnInit {
       person: "Bittu",
       reveal: false,
       imageLink: "https://i.postimg.cc/0QcWtpNt/Get-Paid-Stock-com-62167c251d3b5.jpg",
-      personImage: "assets/images/Bittu.jpg"
+      personImage: "assets/images/Bittu.jpeg"
     },
     {
       message: "Hello Venky, Thanks for your assistance and hard work. I wish you success in the future. Goodbye, and I hope you keep in touch ",
