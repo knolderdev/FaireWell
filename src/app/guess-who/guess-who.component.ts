@@ -185,7 +185,6 @@ export class GuessWhoComponent implements OnInit {
     });
     dialogRef.afterClosed().subscribe(
       data => {
-        console.log("Dialog output:", data);
         this.messages.forEach((message) => {
           if (message.person === this.searchKey) {
             if (data.result === 'clicked') {
@@ -193,7 +192,7 @@ export class GuessWhoComponent implements OnInit {
             }
           }
         });
-        if(this.searchKey === 'Suraj'){
+        if(this.searchKey === 'Suraj' && data.result === 'clicked'){
           localStorage.removeItem('messages');
           localStorage.setItem('messages', JSON.stringify(this.messages));
           this.checkLocalStorageAvailable();
@@ -205,7 +204,6 @@ export class GuessWhoComponent implements OnInit {
   checkLocalStorageAvailable() {
     if (localStorage.getItem('messages')) {
       this.messages = JSON.parse(<string>localStorage.getItem('messages'));
-      console.log('Item received is', localStorage.getItem('messages'))
     } else {
       console.log('Not available ');
     }
