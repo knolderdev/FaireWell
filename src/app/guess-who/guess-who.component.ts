@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {MatDialog} from "@angular/material/dialog";
 import {GuessWhoPopUpComponent} from "./guess-who-pop-up/guess-who-pop-up.component";
-import {AppConstants} from "../app-constants";
 
 @Component({
   selector: 'app-guess-who',
@@ -11,13 +10,13 @@ import {AppConstants} from "../app-constants";
 export class GuessWhoComponent implements OnInit {
   searchKey!: string;
   sliderOptions = {
-    loop:true,
-    margin:10,
-    nav:false,
+    loop: true,
+    margin: 10,
+    nav: false,
     dots: false,
-    responsive:{
-      0:{
-        items:1
+    responsive: {
+      0: {
+        items: 1
       },
     }
   };
@@ -35,10 +34,19 @@ export class GuessWhoComponent implements OnInit {
       message: 'Venky thank you so much for all your contribution in 3TL. Heartfelt congratulations for your new journey,  Do your best and have a successful life ahead.',
       useClass: 'bg-green-600',
       textClass: 'text-6xl font-bold',
-      person: 'Soni',
+      person: 'Soni-1',
       reveal: false,
       imageLink: "https://mobilesolutions.pt/wp-content/uploads/2016/02/Silver-Blur-Background-Wallpaper.jpg",
       personImage: "assets/images/soni.png"
+    },
+    {
+      message: 'We will miss you Venky. Please deploy all your happiness in your life and always go ahead with strength. Stay in touch.',
+      useClass: 'bg-green-600',
+      textClass: 'text-6xl font-bold',
+      person: 'Soni-2',
+      reveal: false,
+      imageLink: "https://mobilesolutions.pt/wp-content/uploads/2016/02/Silver-Blur-Background-Wallpaper.jpg",
+      personImage: "assets/images/Soni1.jpeg"
     },
     {
       message: "It was nice working with you bro. Have a blasting career ahead. And remember bro, DEVIL is always with you. All the best and stay in touch!",
@@ -55,7 +63,7 @@ export class GuessWhoComponent implements OnInit {
         "Whenever you are facing any problem with Hindi or you are on a trip to North don't forget to call me.",
       useClass: "bg-green-600",
       textClass: 'text-4xl font-bold',
-      person: "kuki",
+      person: "Kuki",
       reveal: false,
       imageLink: 'https://i.pinimg.com/474x/98/4c/4e/984c4e0369a2874cef897ac4757cef9c.jpg',
       personImage: "assets/images/kuki.jpg"
@@ -123,12 +131,49 @@ export class GuessWhoComponent implements OnInit {
       imageLink: "https://i.postimg.cc/0QcWtpNt/Get-Paid-Stock-com-62167c251d3b5.jpg",
       personImage: "assets/images/Bittu.jpg"
     },
+    {
+      message: "Hello Venky, Thanks for your assistance and hard work. I wish you success in the future. Goodbye, and I hope you keep in touch ",
+      useClass: "bg-green-600",
+      textClass: 'text-6xl font-bold',
+      person: "Abhi",
+      reveal: false,
+      imageLink: 'https://i.pinimg.com/474x/98/4c/4e/984c4e0369a2874cef897ac4757cef9c.jpg',
+      personImage: "assets/images/Abhinav.jpg"
+    },
+    {
+      message: "Hi venky , It was a pleasure working with you and  Hope you keep doing your good work in your next job as well.Best of luck of your future.",
+      useClass: "bg-green-600",
+      textClass: 'text-4xl text-white font-bold',
+      person: "Amit",
+      reveal: false,
+      imageLink: "https://i.postimg.cc/0QcWtpNt/Get-Paid-Stock-com-62167c251d3b5.jpg",
+      personImage: "assets/images/Amit.jpg"
+    },
+    {
+      message: "Hi Venky, It's really sad to know that this journey of you being with us is really small. I wish we could have spent more time together. We didn't had much time to work together but yes you are a very generous person and has a beautiful heart. Always stay in touch and all the very best for your future.",
+      useClass: "bg-green-600",
+      textClass: 'text-6xl font-bold',
+      person: "Shruti",
+      reveal: false,
+      imageLink: 'https://i.pinimg.com/474x/98/4c/4e/984c4e0369a2874cef897ac4757cef9c.jpg',
+      personImage: "assets/images/Shruti.jpg"
+    },
+    {
+      message: "Hi venky, It was a pleasure working with you and Hope you keep doing your good work in your next job as well.Best of luck of your future.",
+      useClass: "bg-green-600",
+      textClass: 'text-4xl text-white font-bold',
+      person: "Suraj",
+      reveal: false,
+      imageLink: "https://i.postimg.cc/0QcWtpNt/Get-Paid-Stock-com-62167c251d3b5.jpg",
+      personImage: "assets/images/Suraj.jpg"
+    },
   ];
 
   constructor(private dialog: MatDialog) {
   }
 
   ngOnInit(): void {
+    this.checkLocalStorageAvailable();
   }
 
   open(name: string) {
@@ -142,11 +187,27 @@ export class GuessWhoComponent implements OnInit {
       data => {
         console.log("Dialog output:", data);
         this.messages.forEach((message) => {
-          if (message.person === data.person) {
-            message.reveal = true;
+          if (message.person === this.searchKey) {
+            if (data.result === 'clicked') {
+              message.reveal = true;
+            }
           }
-        })
+        });
+        if(this.searchKey === 'Suraj'){
+          localStorage.removeItem('messages');
+          localStorage.setItem('messages', JSON.stringify(this.messages));
+          this.checkLocalStorageAvailable();
+        }
       }
     );
+  }
+
+  checkLocalStorageAvailable() {
+    if (localStorage.getItem('messages')) {
+      this.messages = JSON.parse(<string>localStorage.getItem('messages'));
+      console.log('Item received is', localStorage.getItem('messages'))
+    } else {
+      console.log('Not available ');
+    }
   }
 }

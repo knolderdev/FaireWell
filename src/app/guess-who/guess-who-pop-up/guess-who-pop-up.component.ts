@@ -33,7 +33,7 @@ export class GuessWhoPopUpComponent implements OnInit {
 
   closeDialog() {
     this.dialogRef.close({
-      result: this.won,
+      result: 'clicked',
       person: this.value
     });
   }

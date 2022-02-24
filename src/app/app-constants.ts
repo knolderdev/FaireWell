@@ -95,7 +95,8 @@ export class AppConstants {
 
   public static readonly names = [
     'Poore',
-    'Soni',
+    'Soni-1',
+    'Soni-2',
     'Suraj',
     'Aamir',
     'Pooh',
@@ -104,8 +105,10 @@ export class AppConstants {
     'Shruti',
     'Bittu',
     'Akshay',
-    'kuki',
+    'Kuki',
     'Amit',
-    'Magan'
+    'Magan',
+    'Pappu',
+    'Abhi'
   ]
 }
