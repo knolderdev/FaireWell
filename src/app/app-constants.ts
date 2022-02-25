@@ -69,6 +69,10 @@ export class AppConstants {
       alt: "First Banner"
     },
     {
+      link: "https://i.postimg.cc/x8213t4X/grapes-Fad.png",
+      alt: "second Banner"
+    },
+    {
       link: "https://i5.walmartimages.com/asr/301921a3-094e-419b-945a-2fedeb8cbba6.f306c45cab0bdb241c0478abcbc63663.jpeg",
       alt: "Third Banner"
     }
@@ -86,10 +90,6 @@ export class AppConstants {
     {
       title: 'Your memories',
       where: '/video'
-    },
-    {
-      title: 'Secrets',
-      where: '/secret'
     }
   ]
 

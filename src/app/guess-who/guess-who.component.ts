@@ -159,14 +159,14 @@ export class GuessWhoComponent implements OnInit {
       personImage: "assets/images/Shruti.jpg"
     },
     {
-      message: "Hi venky, It was a pleasure working with you and Hope you keep doing your good work in your next job as well.Best of luck of your future.",
+      message: "Hello Venkatesh, It was a very short but fabulous time with you. Keep deploying more and more videos on social media. Thank you for all those late time deployments and support. May god deploys all the success soon which is in building mode currently",
       useClass: "bg-green-600",
       textClass: 'text-4xl text-white font-bold',
       person: "Suraj",
       reveal: false,
       imageLink: "https://i.postimg.cc/0QcWtpNt/Get-Paid-Stock-com-62167c251d3b5.jpg",
       personImage: "assets/images/Suraj.jpg"
-    },
+    }
   ];
 
   constructor(private dialog: MatDialog) {
@@ -185,18 +185,23 @@ export class GuessWhoComponent implements OnInit {
     });
     dialogRef.afterClosed().subscribe(
       data => {
-        this.messages.forEach((message) => {
-          if (message.person === this.searchKey) {
-            if (data.result === 'clicked') {
-              console.log('The result is ', data.result);
-              message.reveal = true;
+        if(data != undefined){
+          this.messages.forEach((message) => {
+            if (message.person === this.searchKey) {
+              if (data.result === 'clicked') {
+                console.log('The result is ', data.result);
+                console.log('Message is', message);
+                message.reveal = true;
+              }
             }
+          });
+          if(this.searchKey === 'Suraj' && data.result === 'clicked'){
+            localStorage.removeItem('messages');
+            localStorage.setItem('messages', JSON.stringify(this.messages));
+            setTimeout(()=>{
+              this.checkLocalStorageAvailable();
+            }, 2000);
           }
-        });
-        if(this.searchKey === 'Suraj' && data.result === 'clicked'){
-          localStorage.removeItem('messages');
-          localStorage.setItem('messages', JSON.stringify(this.messages));
-          this.checkLocalStorageAvailable();
         }
       }
     );

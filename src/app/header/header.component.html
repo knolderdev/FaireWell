@@ -14,7 +14,7 @@
         <!-- Primary Navbar items -->
         <div class="hidden md:flex items-center space-x-1">
           <ng-container *ngFor="let item of menu">
-            <a class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300"
+            <a class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 uppercase transition duration-300"
                routerLink="{{item.where}}">{{item.title}}</a>
           </ng-container>
         </div>
