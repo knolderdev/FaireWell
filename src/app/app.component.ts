@@ -17,7 +17,8 @@ export class AppComponent implements OnInit{
   ngOnInit() {
     this.ngxHowlerService.register('dev', {
       src: ['assets/music/background_music.mp3'],
-      html5: true
+      html5: true,
+      volume: 0.1
     }).subscribe(status => {
       console.log('status', status);
     });

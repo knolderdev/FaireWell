@@ -10,10 +10,10 @@ import {GuessWhoPopUpComponent} from "./guess-who-pop-up/guess-who-pop-up.compon
 export class GuessWhoComponent implements OnInit {
   searchKey!: string;
   sliderOptions = {
-    loop: true,
+    loop: false,
     margin: 10,
     nav: false,
-    dots: false,
+    dots: true,
     responsive: {
       0: {
         items: 1
@@ -188,6 +188,7 @@ export class GuessWhoComponent implements OnInit {
         this.messages.forEach((message) => {
           if (message.person === this.searchKey) {
             if (data.result === 'clicked') {
+              console.log('The result is ', data.result);
               message.reveal = true;
             }
           }
